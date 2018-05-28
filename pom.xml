@@ -4,18 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.zhaolei.framework</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
-    <name>demo</name>
-    <description>Demo project for framework based on Spring Cloud.</description>
+    <name>base</name>
+    <description>框架项目的根 POM。</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.2.RELEASE</version>
-        <relativePath/> <!-- 更改来自于lookup parent from repository -->
+        <relativePath/> 
     </parent>
 
     <properties>
@@ -24,6 +24,10 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <modules>
+    	<module>demo</module>
+    </modules>
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -37,14 +41,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -71,21 +68,10 @@
             <artifactId>spring-restdocs-mockmvc</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!-- dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency-->
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-
 </project>
