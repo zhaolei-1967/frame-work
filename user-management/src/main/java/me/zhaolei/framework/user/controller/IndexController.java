@@ -41,5 +41,4 @@ public class IndexController {
 		modelAndView.addObject("notes", notes);
 		return modelAndView;
 	}
-
 }

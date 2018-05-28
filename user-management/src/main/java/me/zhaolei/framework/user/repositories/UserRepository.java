@@ -4,9 +4,7 @@ import java.util.List;
 
 import me.zhaolei.framework.user.domain.User;
 
-public class UserRepository {
+public interface UserRepository {
 
-	public List<User> findAll() {
-		return null;
-	}
+	public List<User> findAll();
 }
