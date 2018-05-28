@@ -26,6 +26,7 @@
 
     <modules>
     	<module>demo</module>
+    	<module>user-management</module>
     </modules>
     
     <dependencies>
