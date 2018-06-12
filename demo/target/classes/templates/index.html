@@ -7,21 +7,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<table class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Summary</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:if="${messages.empty}">
-						<td colspan="3">No messages</td>
-					</tr>
-					<tr th:each="message : ${messages}">
-						<td th:text="${message}">1</td>
-					</tr>
-				</tbody>
-			</table>
+			<h1>公共初始页面！</h1>
 		</div>
 	</body>
 </html>
