@@ -1,0 +1,17 @@
+p.error {
+    font-weight: bold;
+    color: red;
+}
+
+div.logout {
+    float: right;
+}
+.container{
+    display:table;
+    height:100%;
+}
+
+.row{
+    display: table-cell;
+    vertical-align: middle;
+}

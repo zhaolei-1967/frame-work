@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="head (title)">
+		<title th:text="${title}">Fragments</title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+			href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Summary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${messages.empty}">
+						<td colspan="3">No messages</td>
+					</tr>
+					<tr th:each="message : ${messages}">
+						<td th:text="${message}">1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
