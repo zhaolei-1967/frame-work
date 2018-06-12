@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 	<head th:fragment="head (title)">
 		<title th:text="${title}">Fragments</title>
 		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
@@ -22,6 +22,9 @@
 					</tr>
 				</tbody>
 			</table>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="退出登录"/>
+			</form>
 		</div>
 	</body>
 </html>

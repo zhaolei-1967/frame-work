@@ -6,6 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -17,7 +19,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**", "/index").permitAll()
                 .antMatchers("/private/**").hasRole("USER")
                 .and()
-                .formLogin().loginPage("/login").successForwardUrl("/private/index").failureUrl("/login-error");
+                .formLogin().loginPage("/login").successForwardUrl("/private/index").failureUrl("/login-error").and()
+                .logout().permitAll()
+                .logoutSuccessUrl("/")
+                .invalidateHttpSession(true);
+        //.logoutSuccessHandler(HttpStatusReturningLogoutSuccessHandler)
+        //.addLogoutHandler(logoutHandler)
+        //.deleteCookies(cookieNamesToClear);
     }
 
     @Autowired
