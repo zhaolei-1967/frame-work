@@ -2,6 +2,8 @@ package me.zhaolei.framework.demo.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +21,17 @@ public class HomePageControl {
 
 	@RequestMapping("/private/index")
 	public ModelAndView list(Model model) {
+		// 通过安全环境获取当前用户的信息。
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String username;
+		if (principal instanceof UserDetails) {
+			username = ((UserDetails)principal).getUsername();
+		} else {
+			username = principal.toString();
+		}
 		model.addAttribute("title", "机密页面");
+		model.addAttribute("username", username);
+
 		ArrayList<String> messages = new ArrayList<String>();
 		messages.add("11111111111");
 		messages.add("22222222");
